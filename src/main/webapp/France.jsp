@@ -104,7 +104,8 @@
         <div class="box">
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="맛집"
                     onClick="location.href='#f_rest'"><span>맛집 <i class="fa-solid fa-utensils"></i></span></button>
-            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="뉴스"><span>뉴스 <i class="fa-solid fa-newspaper"></i> </span></button>
+            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="뉴스"
+                    onClick="location.href='NEWS_FR.jsp'"><span>뉴스 <i class="fa-solid fa-newspaper"></i> </span></button>
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="리뷰"><span>리뷰 <i class="fa-solid fa-comment-dots"></i></span></button>
         </div>
     </div>
@@ -150,7 +151,6 @@
     <%  Covid botC = new Covid("https://news.google.com/covid19/map?hl=ko&mid=%2Fm%2F0f8l9c&gl=KR&ceid=KR%3Ako");
         arrC = botC.activateBot();
     %>
-
     <!---스크래핑 정보 필요-->
     <section class="about section" style="margin-top: 20em;">
         <div class="about__container container gird gap" id="f_covid">
@@ -201,7 +201,7 @@
                 <ul class="about__description">
                     <li>
                         <b>여행 추천기간</b> :  4월~5월 / 9~10월 <br>
-                        <br>봄과 가을이 우리에게 가장 친숙한 날씨이다. 다만 일교차가 크니 얇은 겉옷은 항상 챙기도록 하자. 연평균 기온은 11.3도. 가장 더운 달은 7월로 평균 20도, 가장 추운 달은 1월로 5도 정도 된다. 연중 강우량이 높으며 비가 오는 날에도 건조한 편. 겨울에는 온도가 0도 이하로 내려가거나 눈이 내리는 날은 드물다.<br>
+                        봄과 가을이 우리에게 가장 친숙한 날씨이다. 다만 일교차가 크니 얇은 겉옷은 항상 챙기도록 하자. 연평균 기온은 11.3도. 가장 더운 달은 7월로 평균 20도, 가장 추운 달은 1월로 5도 정도 된다. 연중 강우량이 높으며 비가 오는 날에도 건조한 편. 겨울에는 온도가 0도 이하로 내려가거나 눈이 내리는 날은 드물다.<br><br>
                     </li>
                     <li>
                         <b>추천 옷차림</b> : 실시간 날씨 체크가 중요하다. 봄이나 가을에는 여름처럼 덥다가도 다음날 온도가 10도 이상 떨어져 두꺼운 재킷이 필요할 때도 있고, 여름에도 비가 오면 제법 쌀쌀해져 얇은 재킷이 필요할 수도. 일교차도 큰 편이니 최저기온과 최고기온을 함께 확인 하자.
@@ -224,15 +224,11 @@
         </div>
     </section>
     <!--==================== 환율 ====================-->
-<<<<<<< HEAD
     <%!  String sale="";%>
     <%  Exchange_Rate bot1 = new Exchange_Rate("https://finance.naver.com/marketindex/exchangeList.naver");
         sale = bot1.activateBot(2);
     %>
-    <section class="about section" >
-=======
     <section class="about section bg" >
->>>>>>> 271636a90c597fa65754197d04e485686cc744d2
         <div class="about__container container gird gap" id="f_ex">
             <h2 class="section__title about__title"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></h2>
             <table class="tg">
@@ -254,8 +250,8 @@
     <%  Restaurant botR = new Restaurant("https://www.yelp.com/search?find_desc=Restaurants&find_loc=Paris%2C+France");
         arrR = botR.activateBot();
     %>
-    <section class="place section" id="place">
-        <div class="about__container container gird gap" id="uk_rest">
+    <section class="place section" id="place"style="margin-bottom: 20em;">
+        <div class="about__container container gird gap" id="f_rest">
             <h2 class="section__title about__title">맛집 <i class="fa-solid fa-utensils"></i></h2>
 
             <div class="place__container container grid">
@@ -359,8 +355,8 @@
 <script src="assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="assets/js/chart/f_chart.js"></script>
-<script src="assets/js/fr_map.js"></script>
-<script src="assets/js/fr_weather.js"></script>
+<script src="assets/js/map/fr_map.js"></script>
+<script src="assets/js/weather/fr_weather.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWNwND17k49S529e1b23yG20JexwvWPKs&callback=initMap&v=weekly" defer></script>
 </body>
 </html>

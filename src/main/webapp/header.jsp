@@ -34,13 +34,16 @@
                 <li class="nav__item">
                     <a href="USA.jsp" class="nav__link">USA</a>
                 </li>
+                <li class="nav__item">
+                    <a href="login.html" class="nav__link">Login</a>
+                </li>
             </ul>
 
-            <div class="nav__dark">
-                <!-- Theme change button -->
-                <span class="change-theme-name">Dark mode</span>
-                <i class="ri-moon-line change-theme" id="theme-button"></i>
-            </div>
+<%--            <div class="nav__dark">--%>
+<%--                <!-- Theme change button -->--%>
+<%--                <span class="change-theme-name">Dark mode</span>--%>
+<%--                <i class="ri-moon-line change-theme" id="theme-button"></i>--%>
+<%--            </div>--%>
 
             <i class="ri-close-line nav__close" id="nav-close"></i>
         </div>

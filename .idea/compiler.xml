@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gat-igaja" />
         <module name="gat-igaja_final" />
+        <module name="Gat-iGaja_for_submission" />
         <module name="dynamic_web" />
       </profile>
     </annotationProcessing>

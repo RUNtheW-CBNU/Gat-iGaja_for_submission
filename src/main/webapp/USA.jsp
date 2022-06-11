@@ -95,26 +95,31 @@
     <div class="bg-2">
         <div class="box">
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="여행 정보"
-                    onClick="location.href='#f_info'"><span>여행 정보 <i class="fa-solid fa-plane"></i></span></button>
+                    onClick="location.href='#us_info'"><span>여행 정보 <i class="fa-solid fa-plane"></i></span></button>
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="코로나 상황"
-                    onClick="location.href='#f_covid'"><span>코로나 상황 <i class="fa-solid fa-virus"></i></span></button>
+                    onClick="location.href='#us_covid'"><span>코로나 상황 <i class="fa-solid fa-virus"></i></span></button>
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="날씨"
-                    onClick="location.href='#f_weather'"><span>날씨 <i class="fa-solid fa-cloud-sun"></i></span></button>
+                    onClick="location.href='#us_weather'"><span>날씨 <i class="fa-solid fa-cloud-sun"></i></span></button>
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="환율"
-                    onClick="location.href='#f_ex'"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></button>
+                    onClick="location.href='#us_ex'"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></button>
         </div>
         <div class="box">
-            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="맛집"><span>맛집 <i class="fa-solid fa-utensils"></i></span></button>
-            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="뉴스"><span>뉴스 <i class="fa-solid fa-newspaper"></i> </span></button>
+            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="맛집"
+                    onClick="location.href='#us_rest'"><span>맛집 <i class="fa-solid fa-utensils"></i></span></button>
+            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="뉴스"
+                    onClick="location.href='NEWS_USA.jsp'"><span>뉴스 <i class="fa-solid fa-newspaper"></i> </span></button>
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="리뷰"><span>리뷰 <i class="fa-solid fa-comment-dots"></i></span></button>
         </div>
     </div>
 
     <!--==================== 여행 정보 ====================-->
-    <section class="about section" id="f_info">
+    <section class="about section" id="us_info">
         <div class="about__container container gird">
             <h2 class="section__title about__title">여행 정보 <i class="fa-solid fa-plane"></i></h2>
-            <div class="about__data" style="width: 55%; float: left; margin-right: 1em;">
+            <div class="info_img" style="width: 40%; float: left; margin-left: -2em;">
+                <div id="map"></div>
+            </div>
+            <div class="about__data" style="width: 55%; float: right; ">
                 <ul class="about__description">
                     <li style="float: left; margin-right:0.5em">
                         <ul class="ul_box border_rounded">
@@ -140,303 +145,200 @@
                     </li>
                 </ul>
             </div>
-            <div class="info_img" style="width: 40%; float: right;">
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65136545.9243897!2d-141.08977859420528!3d30.376373698916638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2skr!4v1654752005747!5m2!1sen!2skr"
-                            width="295" height="400" style="border:0;"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
         </div>
     </section>
 
     <!--==================== 코로나 상황 ====================-->
-    <<<<<<< HEAD
     <%!  String [] arrC= new String[6];%>
     <%  Covid botC = new Covid("https://news.google.com/covid19/map?hl=ko&mid=%2Fm%2F09c7w0&gl=KR&ceid=KR%3Ako");
         arrC = botC.activateBot();
     %>
-
-    <section class="about section" >
-        =======
-        <section class="about section" style="margin-top: 20em;">
-            >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-            <div class="about__container container gird gap" id="f_covid">
-                <div class="about__data covid_parent" >
-                    <h2 class="section__title about__title">코로나 상황 <i class="fa-solid fa-virus"></i></h2>
-                    <ul class="covid">
+    <section class="about section" style="margin-top: 20em;">
+        <div class="about__container container gird gap" id="us_covid">
+            <div class="about__data covid_parent" >
+                <h2 class="section__title about__title">코로나 상황 <i class="fa-solid fa-virus"></i></h2>
+                <ul class="covid">
+                    <li>
+                        <strong>신규 확진자(1일 평균)</strong>
+                    </li>
+                    <ul>
                         <li>
-                            <strong>신규 확진자(1일 평균)</strong>
+                            <img src="<%= arrC[0]%>" class="dt3Iuf zC7z7b FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
                         </li>
-                        <ul>
-                            <li>
-                                <img src="<%= arrC[0]%>" class="dt3Iuf zC7z7b FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
-                            </li>
-                            <li>
-                                <%= arrC[4]%>
-                            </li>
-                        </ul>
-                    </ul>
-                    <ul class="covid">
                         <li>
-                            <strong>인구 중 접종 완료자 비율(%)</strong>
+                            <%= arrC[4]%>
                         </li>
-                        <ul>
-                            <li>
-                                <img src="<%= arrC[2]%>" class="dt3Iuf krHqHb FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
-                            </li>
-                            <li>
-                                <%= arrC[5]%>
-                            </li>
-                        </ul>
                     </ul>
-                    <span class="source">출처: OWID, 존스 홉킨스 대학교</span>
-                    <ul class="covid" style="margin-bottom: 10vh;">
-                        <h4 style="margin-bottom: 2vh"><a href="https://news.google.com/search?q=%EB%AF%B8%EA%B5%AD%20%EC%BD%94%EB%A1%9C%EB%82%98%20when%3A7d&hl=ko&gl=KR&ceid=KR%3Ako">최신 코로나 관련 뉴스 확인하기</a></h4>
+                </ul>
+                <ul class="covid">
+                    <li>
+                        <strong>인구 중 접종 완료자 비율(%)</strong>
+                    </li>
+                    <ul>
+                        <li>
+                            <img src="<%= arrC[2]%>" class="dt3Iuf krHqHb FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
+                        </li>
+                        <li>
+                            <%= arrC[5]%>
+                        </li>
                     </ul>
-                </div>
+                </ul>
+                <span class="source">출처: OWID, 존스 홉킨스 대학교</span>
+                <ul class="covid" style="margin-bottom: 10vh;">
+                    <h4 style="margin-bottom: 2vh"><a href="https://news.google.com/search?q=%EB%AF%B8%EA%B5%AD%20%EC%BD%94%EB%A1%9C%EB%82%98%20when%3A7d&hl=ko&gl=KR&ceid=KR%3Ako">최신 코로나 관련 뉴스 확인하기</a></h4>
+                </ul>
             </div>
+        </div>
+    </section>
 
-
-        </section>
-
-        <!--==================== 날씨 정보 ====================-->
-        <section class="about section" >
-            <div class="about__container container gird gap" id="f_weather">
-                <h2 class="section__title about__title">날씨 정보 <i class="fa-solid fa-plane"></i></h2>
-                <div class="about__data" style="width: 55%; float: left; margin-right: 1em;">
-                    <ul class="about__description">
-                        <li>
-                            <b>여행 추천기간(뉴욕 기준)</b> :  10월~11월
-                            <br>미국이 워낙 넓은 국가라 다양한 기후가 다양하게 존재하므로 여행시기나 지역에 따라 추천 시즌은 달라진다.<br>
-                            뉴욕을 기준으로 하자면, 10월-11월 초까지가 맑고 쾌적하며 풍경이 아름다워 여행하기 최적의 시기라 할 수 있다.<br>
-                        </li>
-                        <li>
-                            <b>추천 옷차림</b> : 사계절이 있는 뉴욕의 옷차림은 한국과 거의 비슷하다.
-                            다만 높은 건물 사이로 바람이 많이 불고 봄 가을에는 일교차가 큰 만큼 가벼운 가디건이나 머플러를 준비하는 것이 좋다.
-                            한 달에 10일 정도 비가 올 가능성이 있으므로 작은 우산도 챙겨 오면 좋고 겨울에는 모자나 핫 팩 등의 방한 용품을 준비하기를 권장한다.
-                        </li>
-                    </ul>
-                    <canvas class="line_chart" id="line-chart_us" ></canvas>
-                </div>
-                <div class="info_img" style="width: 40%; float: right;">
-                    <!-- 날씨 api container에 받아옴 -->
-                    <div class="container">
-                        <div class = "card">
-                            <h2><i>&#x2708 </i> <span id="location"></span></h2>
-                            <h5 id="weather"></h5>
-                            <h4><span id="temp"></span><sup>o</sup>C</h4>
-                            <img src ="" id ="icon">
-                            <!--<button onclick="window.location.reload();" class="refresh"><i>&#x2708</i></button>-->
-                        </div>
+    <!--==================== 날씨 정보 ====================-->
+    <section class="about section" >
+        <div class="about__container container gird gap" id="us_weather">
+            <h2 class="section__title about__title">날씨 정보 <i class="fa-solid fa-plane"></i></h2>
+            <div class="about__data" style="width: 55%; float: left; margin-right: 1em;">
+                <ul class="about__description">
+                    <li>
+                        <b>여행 추천기간(뉴욕 기준)</b> :  10월~11월
+                        <br>미국이 워낙 넓은 국가라 다양한 기후가 다양하게 존재하므로 여행시기나 지역에 따라 추천 시즌은 달라진다.
+                        뉴욕을 기준으로 하자면, 10월-11월 초까지가 맑고 쾌적하며 풍경이 아름다워 여행하기 최적의 시기라 할 수 있다.<br><br>
+                    </li>
+                    <li>
+                        <b>추천 옷차림</b> : 사계절이 있는 뉴욕의 옷차림은 한국과 거의 비슷하다.
+                        다만 높은 건물 사이로 바람이 많이 불고 봄 가을에는 일교차가 큰 만큼 가벼운 가디건이나 머플러를 준비하는 것이 좋다.
+                        한 달에 10일 정도 비가 올 가능성이 있으므로 작은 우산도 챙겨 오면 좋고 겨울에는 모자나 핫 팩 등의 방한 용품을 준비하기를 권장한다.
+                    </li>
+                </ul>
+                <canvas class="line_chart" id="line-chart_us" ></canvas>
+            </div>
+            <div class="info_img" style="width: 40%; float: right;">
+                <!-- 날씨 api container에 받아옴 -->
+                <div class="container">
+                    <div class = "card">
+                        <h2><i>&#x2708 </i> <span id="location"></span></h2>
+                        <h5 id="weather"></h5>
+                        <h4><span id="temp"></span><sup>o</sup>C</h4>
+                        <img src ="" id ="icon">
+                        <!--<button onclick="window.location.reload();" class="refresh"><i>&#x2708</i></button>-->
                     </div>
                 </div>
             </div>
-        </section>
-        <!--==================== 환율 ====================-->
-            <%!  String sale="";%>
-            <%  Exchange_Rate bot1 = new Exchange_Rate("https://finance.naver.com/marketindex/exchangeList.naver");
-        sale = bot1.activateBot(1);
+        </div>
+    </section>
+    <!--==================== 환율 ====================-->
+    <%!  String sale="";%>
+    <%  Exchange_Rate bot1 = new Exchange_Rate("https://finance.naver.com/marketindex/exchangeList.naver");
+    sale = bot1.activateBot(1);
     %>
-        <section class="about section" >
-            <div class="about__container container gird gap" id="f_ex">
-                <h2 class="section__title about__title"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></h2>
-                <table class="tg">
-                    <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="유럽연합 EUR" width="1" height="1">미국 USD</th>
-                    <th rowspan="2" align=center style="padding: 0 10vw 0;"><i class="fa-solid fa-arrows-rotate"></i></th>
-                    <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="대한민국 KRW" width="1" height="1">대한민국 KRW</th>
+    <section class="about section" >
+        <div class="about__container container gird gap" id="us_ex">
+            <h2 class="section__title about__title"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></h2>
+            <table class="tg">
+                <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="유럽연합 EUR" width="1" height="1">미국 USD</th>
+                <th rowspan="2" align=center style="padding: 0 10vw 0;"><i class="fa-solid fa-arrows-rotate"></i></th>
+                <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="대한민국 KRW" width="1" height="1">대한민국 KRW</th>
 
-                    <tr>
-                        <td class="tg-0pky" colspan="4">1 USD</td>
-                        <!-- 환율 정보 입력 -->
-                        <td class="tg-0pky" colspan="4"><%= sale%>  원</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-        <section class="gap"></section>
-        <!--==================== 맛집 ====================-->
-        <section class="place section" id="place">
-            <div class="about__container container gird gap" id="uk_rest">
-                <h2 class="section__title about__title">맛집 <i class="fa-solid fa-utensils"></i></h2>
+                <tr>
+                    <td class="tg-0pky" colspan="4">1 USD</td>
+                    <!-- 환율 정보 입력 -->
+                    <td class="tg-0pky" colspan="4"><%= sale%>  원</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="gap"></section>
 
-                <<<<<<< HEAD
-                <!--==================== 맛집 ====================-->
-                <%!  String [] arrR= new String[21];%>
-                <%  Restaurant botR = new Restaurant("https://www.yelp.com/search?find_desc=Restaurants&find_loc=%08new+york");
-                    arrR = botR.activateBot();
-                %>
-                <section class="place section" id="place">
-                    <div class="about__container container gird gap" id="uk_rest">
-                        <h2 class="section__title about__title">맛집 <i class="fa-solid fa-utensils"></i></h2>
+    <!--==================== 맛집 ====================-->
+    <%!  String [] arrR= new String[21];%>
+    <%  Restaurant botR = new Restaurant("https://www.yelp.com/search?find_desc=Restaurants&find_loc=%08new+york");
+    arrR = botR.activateBot();
+    %>
+    <section class="place section" id="place" style="margin-bottom: 20em;">
+    <div class="about__container container gird gap" id="us_rest">
+        <h2 class="section__title about__title">맛집 <i class="fa-solid fa-utensils"></i></h2>
 
-                        <div class="place__container container grid">
-                            <!------맛집1------>
-                            <div class="place__card">
-                                <img src="<%= arrR[10]%>" alt="" class="place__img">
-                                <div class="place__content">
-                                    <div class="place__data">
-                                        <h3 style="margin-top: 7em; color:white;"><%= arrR[0]%></h3>
-                                        =======
-                                        <div class="place__container container grid">
-                                            <!------맛집1------>
-                                            <div class="place__card">
-                                                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/25/08/0a/le-cheddar.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                <div class="place__content">
-                                                    <div class="place__data">
-                                                        <h3 style="margin-top: 7em; color:white;">Il Etait Un Square<br>
-                                                            3,792<br>
-                                                            $ - $$ • 프랑스 요리, 스테이크하우스, 유럽 요리<br>
-                                                            파리, 프랑스</h3>
-                                                        >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="place__card">
-                                                <<<<<<< HEAD
-                                                <img src="<%= arrR[11]%>" alt="" class="place__img">
-                                                <div class="place__content">
-                                                    <div class="place__data">
-                                                        <h3 class="place__title"  style="margin-top: 7em;" ><%= arrR[1]%></h3>
-                                                        =======
-                                                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/7b/97/b5/strlng.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                        <div class="place__content">
-                                                            <div class="place__data">
-                                                                <h3 class="place__title"  style="margin-top: 7em;" >프랑스</h3>
-                                                                >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="place__card">
-                                                        <<<<<<< HEAD
-                                                        <img src="<%= arrR[12]%>" alt="" class="place__img">
-                                                        <div class="place__content">
-                                                            <div class="place__data">
-                                                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[2]%></h3>
-                                                                =======
-                                                                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/30/f9/2e/bouchon-tupin.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                                <div class="place__content">
-                                                                    <div class="place__data">
-                                                                        <h3 class="place__title"  style="margin-top: 7em;">아랍</h3>
-                                                                        >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="place__card">
-                                                                <<<<<<< HEAD
-                                                                <img src="<%= arrR[13]%>" alt="" class="place__img">
-                                                                <div class="place__content">
-                                                                    <div class="place__data">
-                                                                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[3]%></h3>
-                                                                        =======
-                                                                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/90/45/b2/hall-1.jpg?w=400&h=-1&s=1" alt="" class="place__img">
-                                                                        <div class="place__content">
-                                                                            <div class="place__data">
-                                                                                <h3 class="place__title"  style="margin-top: 7em;">필리핀</h3>
-                                                                                >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="place__card">
-                                                                        <<<<<<< HEAD
-                                                                        <img src="<%= arrR[14]%>" alt="" class="place__img">
-                                                                        <div class="place__content">
-                                                                            <div class="place__data">
-                                                                                <h3 class="place__title" style="margin-top: 7em;"><%= arrR[4]%></h3>
-                                                                                =======
-                                                                                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/14/54/24/photo0jpg.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                                                <div class="place__content">
-                                                                                    <div class="place__data">
-                                                                                        <h3 class="place__title" style="margin-top: 7em;">호주</h3>
-                                                                                        >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="place__card">
-                                                                                <<<<<<< HEAD
-                                                                                <img src="<%= arrR[15]%>" alt="" class="place__img">
-                                                                                <div class="place__content">
-                                                                                    <div class="place__data">
-                                                                                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[5]%></h3>
-                                                                                        =======
-                                                                                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/f2/5b/96/sesame-noir.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                                                        <div class="place__content">
-                                                                                            <div class="place__data">
-                                                                                                <h3 class="place__title"  style="margin-top: 7em;">미국</h3>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="place__card">
-                                                                                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/c4/67/5c/black-bean-chili.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                                                        <div class="place__content">
-                                                                                            <div class="place__data">
-                                                                                                <h3 class="place__title"  style="margin-top: 7em;">미국</h3>
-                                                                                                >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="place__card">
-                                                                                        <<<<<<< HEAD
-                                                                                        <img src="<%= arrR[16]%>" alt="" class="place__img">
-                                                                                        <div class="place__content">
-                                                                                            <div class="place__data">
-                                                                                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[6]%></h3>
-                                                                                                =======
-                                                                                                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/4a/f2/75/getlstd-property-photo.jpg?w=400&h=300&s=1" alt="" class="place__img">
-                                                                                                <div class="place__content">
-                                                                                                    <div class="place__data">
-                                                                                                        <h3 class="place__title"  style="margin-top: 7em;">미국</h3>
-                                                                                                        >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="place__card">
-                                                                                                <<<<<<< HEAD
-                                                                                                <img src="<%= arrR[17]%>" alt="" class="place__img">
-                                                                                                <div class="place__content">
-                                                                                                    <div class="place__data">
-                                                                                                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[7]%></h3>
-                                                                                                        =======
-                                                                                                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/32/a5/0f/img-20201018-180218-largejpg.jpg?w=400&h=-1&s=1" alt="" class="place__img">
-                                                                                                        <div class="place__content">
-                                                                                                            <div class="place__data">
-                                                                                                                <h3 class="place__title"  style="margin-top: 7em;">미국</h3>
-                                                                                                                >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="place__card">
-                                                                                                        <<<<<<< HEAD
-                                                                                                        <img src="<%= arrR[18]%>" alt="" class="place__img">
-                                                                                                        <div class="place__content">
-                                                                                                            <div class="place__data">
-                                                                                                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[8]%></h3>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                </section>
-
-
-                =======
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/ad/80/4a/le-pompon.jpg?w=400&h=300&s=1" alt="" class="place__img">
+        <div class="place__container container grid">
+            <!------맛집1------>
+            <div class="place__card">
+                <img src="<%= arrR[10]%>" alt="" class="place__img">
                 <div class="place__content">
                     <div class="place__data">
-                        <h3 class="place__title"  style="margin-top: 7em;">미국</h3>
+                        <h3 style="margin-top: 7em; color:white;"><%= arrR[0]%></h3>
                     </div>
                 </div>
             </div>
 
+            <div class="place__card">
+                <img src="<%= arrR[11]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;" ><%= arrR[1]%></h3>
+                    </div>
+                </div>
             </div>
+
+            <div class="place__card">
+                <img src="<%= arrR[12]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[2]%></h3>
+                    </div>
+                </div>
             </div>
-        </section>
-        >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
+
+            <div class="place__card">
+                <img src="<%= arrR[13]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[3]%></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="place__card">
+                <img src="<%= arrR[14]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title" style="margin-top: 7em;"><%= arrR[4]%></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="place__card">
+                <img src="<%= arrR[15]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[5]%></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="place__card">
+                <img src="<%= arrR[16]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[6]%></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="place__card">
+                <img src="<%= arrR[17]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[7]%></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="place__card">
+                <img src="<%= arrR[18]%>" alt="" class="place__img">
+                <div class="place__content">
+                    <div class="place__data">
+                        <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[8]%></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
 </main>
 
 <!--=============== FOOTER ===============-->
