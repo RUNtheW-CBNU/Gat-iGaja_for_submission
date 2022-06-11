@@ -1,0 +1,42 @@
+
+.container{
+}
+
+.card{
+    width: 300px;
+    height: 230px;
+    border-radius: 50px;
+    background: #ffffff;
+    padding: 3%;
+    border: 2px solid rgb(7, 7, 7);
+    text-align: center;
+}
+.card h4{
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+img#icon{
+    width: 20%;
+}
+h6#weather{
+    text-transform: capitalize;
+}
+button.refresh{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border: 0;
+    font-size: 30px;
+    border-radius: 50%;
+    transition: 0.3s;
+    background: transparent;
+    color: #9c9c9d;
+
+}
+.card h5 {
+    font-size: 1.2rem;
+}
+
+
