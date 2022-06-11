@@ -105,7 +105,8 @@
         <div class="box">
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="맛집"
                     onClick="location.href='#uk_rest'"><span>맛집 <i class="fa-solid fa-utensils"></i></span></button>
-            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="뉴스"><span>뉴스 <i class="fa-solid fa-newspaper"></i> </span></button>
+            <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="뉴스"
+                    onClick="location.href='NEWS_UK.jsp'"><span>뉴스 <i class="fa-solid fa-newspaper"></i> </span></button>
             <button class="button1 button--winona button--border-thick button--round-l button--text-upper button--text-thick" data-text="리뷰"><span>리뷰 <i class="fa-solid fa-comment-dots"></i></span></button>
         </div>
     </div>
@@ -147,198 +148,195 @@
     </section>
 
     <!--==================== 코로나 상황 ====================-->
-    <<<<<<< HEAD
     <%!  String [] arrC= new String[6];%>
     <%  Covid botC = new Covid("https://news.google.com/covid19/map?hl=ko&mid=%2Fm%2F07ssc&gl=KR&ceid=KR%3Ako");
         arrC = botC.activateBot();
     %>
+    <section class="about section" style="margin-top: 20em;">
+
+        <div class="about__container container gird gap" id="uk_covid">
+            <div class="about__data covid_parent" >
+                <h2 class="section__title about__title">코로나 상황 <i class="fa-solid fa-virus"></i></h2>
+                <ul class="covid">
+                    <li>
+                        <strong>신규 확진자(14일)</strong>
+                    </li>
+                    <ul>
+                        <li>
+                            <img src="<%= arrC[0]%> " class="dt3Iuf zC7z7b FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
+                        </li>
+                        <li>
+                            <%= arrC[4]%>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="covid">
+                    <li>
+                        <strong>신규 백신 접종자(14일)</strong>
+                    </li>
+                    <ul>
+                        <li>
+                            <img src="<%= arrC[2]%> " class="dt3Iuf krHqHb FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
+                        </li>
+                        <li>
+                            <%= arrC[5]%>
+                        </li>
+                    </ul>
+                </ul>
+                <span class="source">출처: OWID, 존스 홉킨스 대학교</span>
+                <ul class="covid" style="margin-bottom: 10vh;">
+                    <h4 style="margin-bottom: 2vh"><a href="https://news.google.com/search?q=%EC%98%81%EA%B5%AD%20%EC%BD%94%EB%A1%9C%EB%82%98%20when%3A7d&hl=ko&gl=KR&ceid=KR%3Ako">최신 코로나 관련 뉴스 확인하기</a></h4>
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!--==================== 날씨 정보 ====================-->
     <section class="about section" >
-        =======
-        <section class="about section" style="margin-top: 20em;">
-            >>>>>>> 271636a90c597fa65754197d04e485686cc744d2
-            <div class="about__container container gird gap" id="uk_covid">
-                <div class="about__data covid_parent" >
-                    <h2 class="section__title about__title">코로나 상황 <i class="fa-solid fa-virus"></i></h2>
-                    <ul class="covid">
-                        <li>
-                            <strong>신규 확진자(14일)</strong>
-                        </li>
-                        <ul>
-                            <li>
-                                <img src="<%= arrC[0]%> " class="dt3Iuf zC7z7b FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
-                            </li>
-                            <li>
-                                <%= arrC[4]%>
-                            </li>
-                        </ul>
-                    </ul>
-                    <ul class="covid">
-                        <li>
-                            <strong>신규 백신 접종자(14일)</strong>
-                        </li>
-                        <ul>
-                            <li>
-                                <img src="<%= arrC[2]%> " class="dt3Iuf krHqHb FS6bed" loading="lazy" alt="14일 동향 차트" aria-label="14일 동향 차트">
-                            </li>
-                            <li>
-                                <%= arrC[5]%>
-                            </li>
-                        </ul>
-                    </ul>
-                    <span class="source">출처: OWID, 존스 홉킨스 대학교</span>
-                    <ul class="covid" style="margin-bottom: 10vh;">
-                        <h4 style="margin-bottom: 2vh"><a href="https://news.google.com/search?q=%EC%98%81%EA%B5%AD%20%EC%BD%94%EB%A1%9C%EB%82%98%20when%3A7d&hl=ko&gl=KR&ceid=KR%3Ako">최신 코로나 관련 뉴스 확인하기</a></h4>
-                    </ul>
-                </div>
+        <div class="about__container container gird gap" id="uk_weather">
+            <h2 class="section__title about__title">날씨 정보 <i class="fa-solid fa-plane"></i></h2>
+            <div class="about__data" style="width: 55%; float: left; margin-right: 1em;">
+                <ul class="about__description">
+                    <li>
+                        <b>여행 추천기간</b> :  6월~7월
+                        <br>영국의 날씨는 변덕스럽고 봄, 가을은 한국보다 춥다. 가장 맑은 날이 많은 시기는 6,7월 맑은 날이라도 금세 비가 내리는 일이 흔하기 때문에 여행 중 가벼운 우산을 가지고 다니거나 모자가 달린 옷을 준비하는 것이 좋다.<br><br>
+                    </li>
+                    <li>
+                        <b>추천 옷차림</b> : 봄, 가을은 한국보다 춥고 겨울에는 기온이 영하로 떨어지지는 않지만 바람이 많이 불어 체감온도가 낮다. 전반적으로 우리나라보다 따뜻한 옷을 챙겨가는 것이 좋다.
+                    </li>
+                </ul>
+                <canvas class="line_chart" id="line-chart_uk" ></canvas>
             </div>
-
-
-        </section>
-
-        <!--==================== 날씨 정보 ====================-->
-        <section class="about section" >
-            <div class="about__container container gird gap" id="uk_weather">
-                <h2 class="section__title about__title">날씨 정보 <i class="fa-solid fa-plane"></i></h2>
-                <div class="about__data" style="width: 55%; float: left; margin-right: 1em;">
-                    <ul class="about__description">
-                        <li>
-                            <b>여행 추천기간</b> :  6월~7월
-                            <br>영국의 날씨는 변덕스럽고 봄, 가을은 한국보다 춥다. 가장 맑은 날이 많은 시기는 6,7월 맑은 날이라도 금세 비가 내리는 일이 흔하기 때문에 여행 중 가벼운 우산을 가지고 다니거나 모자가 달린 옷을 준비하는 것이 좋다.
-                        </li>
-                        <li>
-                            <b>추천 옷차림</b> : 봄, 가을은 한국보다 춥고 겨울에는 기온이 영하로 떨어지지는 않지만 바람이 많이 불어 체감온도가 낮다. 전반적으로 우리나라보다 따뜻한 옷을 챙겨가는 것이 좋다.
-                        </li>
-                    </ul>
-                    <canvas class="line_chart" id="line-chart_uk" ></canvas>
-                </div>
-                <div class="info_img" style="width: 40%; float: right;">
-                    <!-- 날씨 api container에 받아옴 -->
-                    <div class="container">
-                        <div class = "card">
-                            <h2><i>&#x2708 </i> <span id="location"></span></h2>
-                            <h5 id="weather"></h5>
-                            <h4><span id="temp"></span><sup>o</sup>C</h4>
-                            <img src ="" id ="icon">
-                            <!--<button onclick="window.location.reload();" class="refresh"><i>&#x2708</i></button>-->
-                        </div>
+            <div class="info_img" style="width: 40%; float: right;">
+                <!-- 날씨 api container에 받아옴 -->
+                <div class="container">
+                    <div class = "card">
+                        <h2><i>&#x2708 </i> <span id="location"></span></h2>
+                        <h5 id="weather"></h5>
+                        <h4><span id="temp"></span><sup>o</sup>C</h4>
+                        <img src ="" id ="icon">
+                        <!--<button onclick="window.location.reload();" class="refresh"><i>&#x2708</i></button>-->
                     </div>
                 </div>
             </div>
-        </section>
-        <!--==================== 환율 ====================-->
-            <%!  String sale="";%>
-            <%  Exchange_Rate bot1 = new Exchange_Rate("https://finance.naver.com/marketindex/exchangeList.naver");
-        sale = bot1.activateBot(7);
-      %>
-        <section class="about section" >
-            <div class="about__container container gird gap" id="uk_ex">
-                <h2 class="section__title about__title"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></h2>
-                <table class="tg">
-                    <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="영국 EUR" width="1" height="1">영국 ERU</th>
-                    <th rowspan="2" align=center style="padding: 0 10vw 0;"><i class="fa-solid fa-arrows-rotate"></i></th>
-                    <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="대한민국 KRW" width="1" height="1">대한민국 KRW</th>
-
-                    <tr>
-                        <td class="tg-0pky" colspan="4">1 파운드</td>
-                        <!-- 환율 정보 입력 -->
-                        <td class="tg-0pky" colspan="4"><%= sale%> 원</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-        <section class="gap"></section>
-
-        <!--==================== 맛집 ====================-->
-            <%!  String [] arrR= new String[21];%>
-            <%  Restaurant botR = new Restaurant("https://www.yelp.com/search?cflt=restaurants&find_loc=London");
-        arrR = botR.activateBot();
+        </div>
+    </section>
+    <!--==================== 환율 ====================-->
+    <%!  String sale="";%>
+    <%  Exchange_Rate bot1 = new Exchange_Rate("https://finance.naver.com/marketindex/exchangeList.naver");
+    sale = bot1.activateBot(7);
     %>
-        <section class="place section" id="place">
-            <div class="about__container container gird gap" id="uk_rest">
-                <h2 class="section__title about__title">맛집 <i class="fa-solid fa-utensils"></i></h2>
+    <section class="about section" >
+        <div class="about__container container gird gap" id="uk_ex">
+            <h2 class="section__title about__title"><span>환율 <i class="fa-solid fa-sack-dollar"></i></span></h2>
+            <table class="tg">
+                <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="영국 EUR" width="1" height="1">영국 ERU</th>
+                <th rowspan="2" align=center style="padding: 0 10vw 0;"><i class="fa-solid fa-arrows-rotate"></i></th>
+                <th class="tg-0pky" colspan="4"><img src="https://ssl.pstatic.net/sstatic/keypage/image/direct/img_blank.gif" class="_img" alt="대한민국 KRW" width="1" height="1">대한민국 KRW</th>
 
-                <div class="place__container container grid">
-                    <!------맛집1------>
-                    <div class="place__card">
-                        <img src="<%= arrR[10]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 style="margin-top: 7em; color:white;"><%= arrR[0]%></h3>
-                            </div>
-                        </div>
-                    </div>
+                <tr>
+                    <td class="tg-0pky" colspan="4">1 파운드</td>
+                    <!-- 환율 정보 입력 -->
+                    <td class="tg-0pky" colspan="4"><%= sale%> 원</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="gap"></section>
 
-                    <div class="place__card">
-                        <img src="<%= arrR[11]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;" ><%= arrR[1]%></h3>
-                            </div>
-                        </div>
-                    </div>
+    <!--==================== 맛집 ====================-->
+    <%!  String [] arrR= new String[21];%>
+    <%  Restaurant botR = new Restaurant("https://www.yelp.com/search?cflt=restaurants&find_loc=London");
+    arrR = botR.activateBot();
+    %>
+    <section class="place section" id="place" style="margin-bottom: 20em;">
+        <div class="about__container container gird gap" id="uk_rest">
+            <h2 class="section__title about__title">맛집 <i class="fa-solid fa-utensils"></i></h2>
 
-                    <div class="place__card">
-                        <img src="<%= arrR[12]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[2]%></h3>
-                            </div>
+            <div class="place__container container grid">
+                <!------맛집1------>
+                <div class="place__card">
+                    <img src="<%= arrR[10]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 style="margin-top: 7em; color:white;"><%= arrR[0]%></h3>
                         </div>
                     </div>
+                </div>
 
-                    <div class="place__card">
-                        <img src="<%= arrR[13]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[3]%></h3>
-                            </div>
+                <div class="place__card">
+                    <img src="<%= arrR[11]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;" ><%= arrR[1]%></h3>
                         </div>
                     </div>
+                </div>
 
-                    <div class="place__card">
-                        <img src="<%= arrR[14]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title" style="margin-top: 7em;"><%= arrR[4]%></h3>
-                            </div>
+                <div class="place__card">
+                    <img src="<%= arrR[12]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[2]%></h3>
                         </div>
                     </div>
+                </div>
 
-                    <div class="place__card">
-                        <img src="<%= arrR[15]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[5]%></h3>
-                            </div>
+                <div class="place__card">
+                    <img src="<%= arrR[13]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[3]%></h3>
                         </div>
                     </div>
-                    <div class="place__card">
-                        <img src="<%= arrR[16]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[6]%></h3>
-                            </div>
+                </div>
+
+                <div class="place__card">
+                    <img src="<%= arrR[14]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title" style="margin-top: 7em;"><%= arrR[4]%></h3>
                         </div>
                     </div>
-                    <div class="place__card">
-                        <img src="<%= arrR[17]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[7]%></h3>
-                            </div>
+                </div>
+
+                <div class="place__card">
+                    <img src="<%= arrR[15]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[5]%></h3>
                         </div>
                     </div>
-                    <div class="place__card">
-                        <img src="<%= arrR[18]%>" alt="" class="place__img">
-                        <div class="place__content">
-                            <div class="place__data">
-                                <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[8]%></h3>
-                            </div>
+                </div>
+                <div class="place__card">
+                    <img src="<%= arrR[16]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[6]%></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="place__card">
+                    <img src="<%= arrR[17]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[7]%></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="place__card">
+                    <img src="<%= arrR[18]%>" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title"  style="margin-top: 7em;"><%= arrR[8]%></h3>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 </main>
 
 <!--=============== FOOTER ===============-->
